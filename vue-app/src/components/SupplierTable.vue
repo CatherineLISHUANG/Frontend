@@ -25,6 +25,7 @@ export default {
           <th scope="col">#</th>
           <th scope="col">Order No.</th>
           <th scope="col">Customer</th>
+          <th scope="col">Contact</th>
           <th scope="col">City</th>
           <th scope="col">Product info</th>
           <th scope="col">Status</th>
@@ -53,6 +54,7 @@ export default {
           </th>
           <td>{{ row.code }}</td>
           <td>{{ row.customer.name }}</td>
+          <td>{{ row.customer.email_address }}</td>
           <td>{{ row.city.name }}</td>
           <td>
             <p>{{ row.product.full_info }}</p>
