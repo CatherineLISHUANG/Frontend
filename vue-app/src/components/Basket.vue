@@ -1,3 +1,6 @@
+<script setup>
+import { RouterLink } from "vue-router";
+</script>
 <template>
   <table class="table">
     <thead class="thead-dark">
@@ -30,7 +33,9 @@
       <tr>
         <th colspan="3"><b>Total: basketSum</b></th>
         <td colspan="1">
-          <button class="btn btn-success text-rigth">Pay me!</button>
+          <RouterLink to="/checkout">
+            <button class="btn btn-success text-rigth">Pay me!</button>
+          </RouterLink>
         </td>
       </tr>
     </tbody>
