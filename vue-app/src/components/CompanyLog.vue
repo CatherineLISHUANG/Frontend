@@ -1,21 +1,40 @@
+<script setup>
+import get_environment from "../environment.js";
+defineProps({
+  query_result: {
+    type: Array,
+    required: true,
+  },
+});
+</script>
 <template>
   <div class="container">
-    <h3>Pending orders</h3>
     <div class="row">
-      <table class="table table-hover table-striped">
+      <table class="table table-hover table-sm table-striped">
         <thead class="thead-light">
           <tr>
-            <th scope="col">Invoice No.</th>
-            <th scope="col">Content summary</th>
+            <th scope="col">#</th>
+            <th scope="col">Order No.</th>
+            <th scope="col">City</th>
+            <th scope="col">Product info</th>
             <th scope="col">Status</th>
-            <th scope="col">Action</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>753150</td>
-            <td>Lorecim Ipsum</td>
-            <td class="text-warning">Pending</td>
+          <tr v-for="row in query_result" :key="row.id">
+            <td>{{ row.id }}</td>
+            <td>{{ row.code }}</td>
+            <td>{{ row.city.name }}</td>
+            <td>
+              <p>{{ row.product.full_info }}</p>
+              <ul>
+                <li>{{ row.product.price }} {{ row.product.sales_unit }}</li>
+                <li>{{ row.product.weight_kg }} kg</li>
+                <li>{{ row.product.total_volume_m3 }} m3</li>
+              </ul>
+            </td>
+            <td>{{ row.status }}</td>
             <td>
               <button
                 type="button"
@@ -42,73 +61,6 @@
               </div>
             </td>
           </tr>
-          <tr class="collapse" id="collapsePending1">
-            <td>Product list</td>
-          </tr>
-          <tr>
-            <td>349761</td>
-            <td>Lorem Ipsum</td>
-            <td class="text-danger">Canceled</td>
-            <td>
-              <button
-                type="button"
-                class="btn btn-outline-warning"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Edit
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a
-                  class="dropdown-item"
-                  href="#"
-                  data-toggle="collapse"
-                  data-target="#collapsePending2"
-                  aria-expanded="false"
-                  aria-controls="collapsePending2"
-                >
-                  Details
-                </a>
-                <a class="dropdown-item" href="#">Check Other Suppliers</a>
-              </div>
-            </td>
-          </tr>
-          <tr class="collapse" id="collapsePending2">
-            <td colspan="2">Products list</td>
-            <td colspan="2">Reason:</td>
-          </tr>
-          <tr>
-            <td>753150</td>
-            <td>Lorecim Ipsum</td>
-            <td class="text-primary">On the way!</td>
-            <td>
-              <button
-                type="button"
-                class="btn btn-outline-warning"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Edit
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a
-                  class="dropdown-item"
-                  href="#"
-                  data-toggle="collapse"
-                  data-target="#collapsePending3"
-                  aria-expanded="false"
-                  aria-controls="collapsePending3"
-                >
-                  Details
-                </a>
-                <a class="dropdown-item" href="#">Schedule the Delivery</a>
-              </div>
-            </td>
-          </tr>
           <tr class="collapse" id="collapsePending3">
             <td colspan="2">Product list</td>
             <td colspan="2">Expected date:</td>
@@ -117,7 +69,7 @@
       </table>
     </div>
 
-    <br /><br />
+    <!-- <br /><br />
     <h3>Past purchases</h3>
     <div class="row">
       <table class="table table-hover table-striped">
@@ -195,6 +147,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
   </div>
 </template>
