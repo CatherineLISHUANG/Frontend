@@ -1,8 +1,7 @@
 <script setup>
 import Cards from "../components/Cards.vue";
-import get_environment from '../environment.js';
+import get_environment from "../environment.js";
 </script>
-
 
 <script>
 export default {
@@ -11,7 +10,7 @@ export default {
     Cards,
   },
   data() {
-    this.explore_options()
+    this.explore_options();
     return {
       error_feedback: "",
       query_result: [],
@@ -19,10 +18,10 @@ export default {
   },
   methods: {
     async explore_options() {
-      const backend_url = get_environment().backend_url
+      const backend_url = get_environment().backend_url;
       const url = `${backend_url}/api/v1/product`;
       const data = await this._get_request(url);
-      this.query_result = data
+      this.query_result = data;
     },
     async _get_request(url) {
       try {
@@ -44,20 +43,9 @@ export default {
 
     <div class="mt-5">
       <div class="card-columns">
-<<<<<<< Updated upstream
-        <div
-        v-for="row in query_result" :key="row.id"
-        >
+        <div v-for="row in query_result" :key="row.id">
           <Cards :product="row" />
         </div>
-=======
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
->>>>>>> Stashed changes
       </div>
     </div>
   </div>
