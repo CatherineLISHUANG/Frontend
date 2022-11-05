@@ -29,6 +29,7 @@ export default {
         <th scope="col">Customer</th>
         <th scope="col">City</th>
         <th scope="col">Product info</th>
+        <th scope="col">Status</th>
         <th scope="col">Confirmation</th>
       </tr>
     </thead>
@@ -62,6 +63,7 @@ export default {
             <li>{{ row.product.total_volume_m3 }} m3</li>
           </ul>
         </td>
+        <td>{{ row.status }}</td>
         <td>
           <button
             type="button"

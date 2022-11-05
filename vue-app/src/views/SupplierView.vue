@@ -24,7 +24,7 @@ export default {
       const data = await this._get_request(url);
       this.query_result = data.map(d => {
         return d
-      })
+      }).filter(d => d.status === 'PENDING') // must show only pending items
     },
     async _get_request(url) {
       try {
