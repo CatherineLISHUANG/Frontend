@@ -30,8 +30,9 @@
   </head>
 
   <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="./index.html">
         <img
           src="./media/icon.png"
           alt="Logo"
@@ -56,12 +57,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="./index.html"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="./about.html">About</a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -76,9 +77,9 @@
               Features
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Company</a>
-              <a class="dropdown-item" href="#">Supplier</a>
-              <a class="dropdown-item" href="#">Transportation</a>
+              <a class="dropdown-item" href="./company.html">Company</a>
+              <a class="dropdown-item" href="./supplier.html">Supplier</a>
+              <a class="dropdown-item" href="./transportation.html">Transportation</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
@@ -87,44 +88,17 @@
       </div>
     </nav>
 
-    <main class="container flex-fill" role="main">
-      <!--Map-->
-      <div class="container padding">
-        <div class="row">
-          <div id="map"></div>
+	<main>
+	</main>
+
+    <footer class="footer">
+      <div class="container">
+          <div class="col-12 text-center mt-4">
+            <h5>&copy; www.magicdashboard.com</h5>
+          </div>
         </div>
       </div>
-    </main>
-
-<!--     <footer class="footer"> -->
-<!--       <div class="container"> -->
-<!--         <div class="row"> -->
-<!--           <div class="col-md-3"> -->
-<!--             <ul> -->
-<!--               <li><a href="./index.html">Homepage</a></li> -->
-<!--             </ul> -->
-<!--           </div> -->
-<!--           <div class="col-md-3"> -->
-<!--             <ul> -->
-<!--               <li><a href="./company.html">Company</a></li> -->
-<!--             </ul> -->
-<!--           </div> -->
-<!--           <div class="col-md-3"> -->
-<!--             <ul> -->
-<!--               <li><a href="./company.html">Supplier</a></li> -->
-<!--             </ul> -->
-<!--           </div> -->
-<!--           <div class="col-md-3"> -->
-<!--             <ul> -->
-<!--               <li><a href="./transportation.html">Transportation</a></li> -->
-<!--             </ul> -->
-<!--           </div> -->
-<!--           <div class="col-12 text-center mt-4"> -->
-<!--             <h5>&copy; www.magicdashboard.com</h5> -->
-<!--           </div> -->
-<!--         </div> -->
-<!--       </div> -->
-<!--     </footer> -->
+    </footer>
 
     <!--Bootstrap’s JS-->
     <script
@@ -151,5 +125,6 @@
         .setView([40, -74.5], 9)
         .addLayer(L.mapbox.styleLayer("mapbox://styles/mapbox/streets-v11"));
     </script>
+
   </body>
 </html>
