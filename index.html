@@ -19,6 +19,15 @@
       href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css"
       rel="stylesheet"
     />
+	<!--Mapbox GL JS-->
+	<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+
+	<!-- Load the `mapbox-gl-geocoder` plugin. -->
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
+
   </head>
 
   <body>
@@ -82,13 +91,7 @@
     <main class="container mt-5" role="main">
       <!--Map-->
     <div class="row">
-		<div class="col-2">
-			<br /><br /><br />
-			<p>Choose the country:</p>
-			<div id="choose-the-country"></div>
-			<div id="warning_click_div"></div>
-		  </div>
-		<div class="col-10" id="map"></div>
+		<div class="col-12" id="map"></div>
     </div>
     </main>
 
