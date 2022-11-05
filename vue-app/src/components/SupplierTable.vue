@@ -1,3 +1,16 @@
+<script>
+export default {
+  mounted() {
+    console.log("fofofofofofofoo");
+  },
+  methods: {
+    myFunction() {
+      console.log("fidsjfosijfiosjfoisdjiof");
+    },
+  },
+};
+</script>
+
 <template>
   <table class="table table-hover table-striped">
     <thead class="thead-light">
@@ -33,7 +46,13 @@
         <td>xxxxx</td>
         <td>=======---- / some%</td>
         <td>
-          <button type="button" class="btn btn-outline-primary">Accept</button>
+          <button
+            type="button"
+            @click="myFunction"
+            class="btn btn-outline-primary"
+          >
+            Accept
+          </button>
           <button
             type="button"
             class="btn btn-outline-danger"

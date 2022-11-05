@@ -1,6 +1,5 @@
 <script setup>
-import { RouterLink } from 'vue-router'
-
+import { RouterLink } from "vue-router";
 </script>
 
 <template>
@@ -26,39 +25,19 @@ import { RouterLink } from 'vue-router'
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <RouterLink class="nav-link" to="/">Home</RouterLink>
-
         </li>
         <li class="nav-item">
-
-            <RouterLink to="/about">About</RouterLink>
-          <RouterLink to="/supplier">Supplier</RouterLink>
+          <RouterLink class="nav-link" to="/about">About</RouterLink>
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Features
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="./company.html">Company</a>
-            <a class="dropdown-item" href="./supplier.html">Supplier</a>
-            <a class="dropdown-item" href="./transportation.html"
-              >Transportation</a
-            >
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+        <li class="nav-item">
+          <RouterLink class="nav-link" to="/supplier">Supplier</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink class="nav-link" to="/company">Company</RouterLink>
         </li>
       </ul>
     </div>
