@@ -9,6 +9,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "socket.io": "^4.5.3",
+    "socket.io-client": "^4.5.3",
     "vue": "^3.2.41",
     "vue-popperjs": "^2.3.0",
     "vue-router": "^4.1.5"

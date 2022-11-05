@@ -36,6 +36,9 @@ import { RouterLink } from "vue-router";
           >
         </li>
         <li class="nav-item">
+          <RouterLink class="nav-link" to="/chat">Chat</RouterLink>
+        </li>
+        <li class="nav-item">
           <RouterLink class="nav-link" to="/supplier">Supplier</RouterLink>
         </li>
         <li class="nav-item">
