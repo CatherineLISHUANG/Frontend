@@ -19,14 +19,20 @@
       href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css"
       rel="stylesheet"
     />
-    <style>
-      #map {
-        position: absolute;
-        top: 100px;
-        bottom: 100px;
-        width: 50%;
-      }
-    </style>
+    <!--Mapbox GL JS-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <!-- Load the `mapbox-gl-geocoder` plugin. -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
   </head>
 
   <body>
@@ -87,44 +93,18 @@
       </div>
     </nav>
 
-    <main class="container flex-fill" role="main">
+    <main class="container mt-5" role="main">
       <!--Map-->
-      <div class="container padding">
-        <div class="row">
-          <div id="map"></div>
-        </div>
+      <div class="row">
+        <div class="col-12" id="map"></div>
       </div>
     </main>
 
-<!--     <footer class="footer"> -->
-<!--       <div class="container"> -->
-<!--         <div class="row"> -->
-<!--           <div class="col-md-3"> -->
-<!--             <ul> -->
-<!--               <li><a href="./index.html">Homepage</a></li> -->
-<!--             </ul> -->
-<!--           </div> -->
-<!--           <div class="col-md-3"> -->
-<!--             <ul> -->
-<!--               <li><a href="./company.html">Company</a></li> -->
-<!--             </ul> -->
-<!--           </div> -->
-<!--           <div class="col-md-3"> -->
-<!--             <ul> -->
-<!--               <li><a href="./company.html">Supplier</a></li> -->
-<!--             </ul> -->
-<!--           </div> -->
-<!--           <div class="col-md-3"> -->
-<!--             <ul> -->
-<!--               <li><a href="./transportation.html">Transportation</a></li> -->
-<!--             </ul> -->
-<!--           </div> -->
-<!--           <div class="col-12 text-center mt-4"> -->
-<!--             <h5>&copy; www.magicdashboard.com</h5> -->
-<!--           </div> -->
-<!--         </div> -->
-<!--       </div> -->
-<!--     </footer> -->
+    <footer class="footer">
+      <div class="col-12 text-center mt-4">
+        <h5>&copy; www.magicdashboard.com</h5>
+      </div>
+    </footer>
 
     <!--Bootstrap’s JS-->
     <script
@@ -142,14 +122,8 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <!--JS for map-->
-    <script>
-      L.mapbox.accessToken =
-        "pk.eyJ1IjoiY2F0aGVyaW5lbGlpaWlpIiwiYSI6ImNsYTMzZGtsbDBuOWIzbm1vY3RveWRtNDYifQ.hbr58j4aPCWcEk_-a80fEQ";
-      var map = L.mapbox
-        .map("map")
-        .setView([40, -74.5], 9)
-        .addLayer(L.mapbox.styleLayer("mapbox://styles/mapbox/streets-v11"));
-    </script>
+
+    <!--our JS codes-->
+    <script src="./main.js"></script>
   </body>
 </html>
