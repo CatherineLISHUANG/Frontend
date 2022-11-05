@@ -19,14 +19,6 @@
       href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css"
       rel="stylesheet"
     />
-    <style>
-      #map {
-        position: absolute;
-        top: 100px;
-        bottom: 100px;
-        width: 50%;
-      }
-    </style>
   </head>
 
   <body>
@@ -87,38 +79,21 @@
       </div>
     </nav>
 
-    <main class="container flex-fill" role="main">
+    <main class="container mt-5" role="main">
       <!--Map-->
-      <div class="container padding">
-        <div class="row">
-          <div id="map"></div>
-        </div>
-      </div>
+    <div class="row">
+		<div class="col-2">
+			<br /><br /><br />
+			<p>Choose the country:</p>
+			<div id="choose-the-country"></div>
+			<div id="warning_click_div"></div>
+		  </div>
+		<div class="col-10" id="map"></div>
+    </div>
     </main>
 
     <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <ul>
-              <li><a href="./index.html">Homepage</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <ul>
-              <li><a href="./company.html">Company</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <ul>
-              <li><a href="./company.html">Supplier</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <ul>
-              <li><a href="./transportation.html">Transportation</a></li>
-            </ul>
-          </div>
+      
           <div class="col-12 text-center mt-4">
             <h5>&copy; www.magicdashboard.com</h5>
           </div>
@@ -142,14 +117,8 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <!--JS for map-->
-    <script>
-      L.mapbox.accessToken =
-        "pk.eyJ1IjoiY2F0aGVyaW5lbGlpaWlpIiwiYSI6ImNsYTMzZGtsbDBuOWIzbm1vY3RveWRtNDYifQ.hbr58j4aPCWcEk_-a80fEQ";
-      var map = L.mapbox
-        .map("map")
-        .setView([40, -74.5], 9)
-        .addLayer(L.mapbox.styleLayer("mapbox://styles/mapbox/streets-v11"));
-    </script>
+    
+	<!--our JS codes-->
+	<script src="./main.js"></script>
   </body>
 </html>
