@@ -8,6 +8,19 @@ defineProps({
 });
 </script>
 
+
+<script>
+
+export default {
+  methods: {
+    add_to_basket() {
+      const item = this.product
+      console.log(item)
+    }
+  }
+}
+</script>
+
 <template>
   <div class="card">
     <!-- <img class="card-img-top" src="@/assets/images/foo.png" alt="{{ ShortDescription }}" /> -->
@@ -21,7 +34,7 @@ defineProps({
           <li>{{ product.total_volume_m3 }} m3</li>
         </ul>
       </p>
-      <a href="#" class="btn btn-success">Add to basket</a>
+      <button @click="add_to_basket" class="btn btn-success">Add to basket</button>
     </div>
   </div>
 </template>
