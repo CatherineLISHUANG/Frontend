@@ -173,11 +173,12 @@ export default {
   <main class="container mt-5" role="main">
     <!--Map-->
     <div class="row">
-      <div class="col-6" id="map"></div>
+      <div class="col-12" id="map"></div>
       <div id="distance" class="distance-container"></div>
-      <div class="table-wrapper-scroll-y my-custom-scrollbar col-6">
-        <HomeSum :query_result="query_result_info" />
-      </div>
+    </div>
+    <br /><br /><br /><br />
+    <div class="table-wrapper-scroll-y my-custom-scrollbar col-12">
+      <HomeSum :query_result="query_result_info" />
     </div>
   </main>
 </template>
