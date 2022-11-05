@@ -31,6 +31,11 @@ import { RouterLink } from "vue-router";
           <RouterLink class="nav-link" to="/">Home</RouterLink>
         </li>
         <li class="nav-item">
+          <RouterLink class="nav-link" to="/catalog"
+            >Product Catalog</RouterLink
+          >
+        </li>
+        <li class="nav-item">
           <RouterLink class="nav-link" to="/supplier">Supplier</RouterLink>
         </li>
         <li class="nav-item">
@@ -40,6 +45,9 @@ import { RouterLink } from "vue-router";
           <RouterLink class="nav-link" to="/about">About</RouterLink>
         </li>
       </ul>
+      <RouterLink to="/basket">
+        <button class="btn btn-success mr-sm-2">Basket</button>
+      </RouterLink>
     </div>
   </nav>
 </template>
