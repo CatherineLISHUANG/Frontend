@@ -1,13 +1,13 @@
 <script setup>
-import SupplierTable from "../components/SupplierTable.vue";
+import CompanyLog from "../components/CompanyLog.vue";
 </script>
 
 <template>
   <div class="container">
-    <h1>Order Log</h1>
+    <h1>Purchase Log</h1>
 
     <div class="mt-5">
-      <SupplierTable />
+      <CompanyLog />
     </div>
   </div>
 </template>
