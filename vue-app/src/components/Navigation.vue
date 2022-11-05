@@ -4,7 +4,7 @@ import { RouterLink } from "vue-router";
 
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="/">
       <img
         src="@/assets/images/icon.png"
         alt="Logo"
@@ -31,13 +31,13 @@ import { RouterLink } from "vue-router";
           <RouterLink class="nav-link" to="/">Home</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" to="/about">About</RouterLink>
-        </li>
-        <li class="nav-item">
           <RouterLink class="nav-link" to="/supplier">Supplier</RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link" to="/company">Company</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink class="nav-link" to="/about">About</RouterLink>
         </li>
       </ul>
     </div>

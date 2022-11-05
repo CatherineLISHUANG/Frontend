@@ -18,16 +18,16 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
     {
-      path: '/supplier',
-      name: 'supplier',
-      component: () => import('../views/SupplierView.vue')
+      path: "/supplier",
+      name: "supplier",
+      component: () => import("../views/SupplierView.vue"),
     },
     {
-      path: '/company',
-      name: 'company',
-      component: () => import('../views/CompanyView.vue')
-    }
-  ]
-})
+      path: "/company",
+      name: "company",
+      component: () => import("../views/CompanyLog.vue"),
+    },
+  ],
+});
 
 export default router;
