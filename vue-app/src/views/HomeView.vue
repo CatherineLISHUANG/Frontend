@@ -172,18 +172,9 @@ export default {
 <template>
   <main class="container mt-5" role="main">
     <!--Map-->
-<<<<<<< Updated upstream
-    <div class="row">
-      <div class="col-12" id="map"></div>
-      <div id="distance" class="distance-container"></div>
-    </div>
-    <br /><br /><br /><br />
-    <div class="table-wrapper-scroll-y my-custom-scrollbar col-12">
-=======
     <div class="row" id="map"></div>
-    <br />
+    <br /><br />
     <div class="table-wrapper-scroll-y my-custom-scrollbar row">
->>>>>>> Stashed changes
       <HomeSum :query_result="query_result_info" />
     </div>
   </main>
