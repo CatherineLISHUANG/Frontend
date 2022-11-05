@@ -1,3 +1,12 @@
+<script setup>
+defineProps({
+  query_result: {
+    type: Array,
+    required: true,
+  },
+});
+</script>
+
 <script>
 export default {
   mounted() {
@@ -12,19 +21,20 @@ export default {
 </script>
 
 <template>
-  <table class="table table-hover table-striped">
+  <table v-if="query_result.length > 0" class="table table-hover table-sm table-striped">
     <thead class="thead-light">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Order No.</th>
-        <th scope="col">Weight (tonna)</th>
-        <th scope="col">Volume (...)</th>
-        <th scope="col">Freight Info</th>
+        <th scope="col">Customer</th>
+        <th scope="col">City</th>
+        <th scope="col">Product info</th>
         <th scope="col">Confirmation</th>
       </tr>
     </thead>
     <tbody>
       <tr
+      v-for="row in query_result" :key="row.id"
       data-toggle="collapse"
       href="#collapse1"
       role="button"
@@ -39,12 +49,19 @@ export default {
           aria-expanded="false"
           aria-controls="collapse1"
         >
-          1
+          {{ row.id }}
         </th>
-        <td>123456</td>
-        <td>xx</td>
-        <td>xxxxx</td>
-        <td>=======---- / some%</td>
+        <td>{{ row.code }}</td>
+        <td>{{ row.customer.name }}</td>
+        <td>{{ row.city.name }}</td>
+        <td>
+          <p>{{ row.product.full_info }}</p>
+          <ul>
+            <li>{{ row.product.price }} {{ row.product.sales_unit }}</li>
+            <li>{{ row.product.weight_kg }} kg</li>
+            <li>{{ row.product.total_volume_m3 }} m3</li>
+          </ul>
+        </td>
         <td>
           <button
             type="button"
@@ -61,56 +78,14 @@ export default {
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Edit
+            Deny
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">Too far away</a>
+            <a class="dropdown-item" href="#">Waiting list</a>
+            <a class="dropdown-item" href="#">Other</a>
           </div>
         </td>
-      </tr>
-      <tr class="collapse" id="collapse1">
-        <td colspan="2">Flight No.: ...</td>
-        <td colspan="2">Departure: ...</td>
-        <td colspan="1">Arrival: ...</td>
-        <td colspan="1">Date: ...</td>
-      </tr>
-
-      <tr>
-        <th scope="row">2</th>
-        <td>456123</td>
-        <td>xx</td>
-        <td>xxxxx</td>
-        <td>======----- %</td>
-        <td>
-          <button type="button" class="btn btn-outline-primary">Yes</button>
-          <button type="button" class="btn btn-outline-danger">No</button>
-        </td>
-      </tr>
-      <tr class="collapse" id="collapse2">
-        <td colspan="2">Flight No.: ...</td>
-        <td colspan="2">Departure: ...</td>
-        <td colspan="1">Arrival: ...</td>
-        <td colspan="1">Date: ...</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>312789</td>
-        <td>xx</td>
-        <td>xxxxxx</td>
-        <td>======- almost full warning</td>
-
-        <td>
-          <button type="button" class="btn btn-outline-primary">Yes</button>
-          <button type="button" class="btn btn-outline-danger">No</button>
-        </td>
-      </tr>
-      <tr class="collapse" id="collapseExample">
-        <td colspan="2">Flight No.: ...</td>
-        <td colspan="2">Departure: ...</td>
-        <td colspan="1">Arrival: ...</td>
-        <td colspan="1">Date: ...</td>
       </tr>
     </tbody>
   </table>
