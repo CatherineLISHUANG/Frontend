@@ -25,11 +25,11 @@ export default {
     </thead>
     <tbody>
       <tr
-        data-toggle="collapse"
-        href="#collapse1"
-        role="button"
-        aria-expanded="false"
-        aria-controls="collapse1"
+      data-toggle="collapse"
+      href="#collapse1"
+      role="button"
+      aria-expanded="false"
+      aria-controls="collapse1"
       >
         <th
           scope="row"
