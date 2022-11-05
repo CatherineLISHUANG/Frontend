@@ -20,3 +20,23 @@ mapboxgl: mapboxgl
 })
 );
 
+//map toast
+const toastTrigger = document.getElementById('liveToastBtn')
+const toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+  toastTrigger.addEventListener('click', () => {
+    const toast = new bootstrap.Toast(toastLiveExample)
+
+    toast.show()
+  })
+}
+
+//show the flight map
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2F0aGVyaW5lbGlpaWlpIiwiYSI6ImNsYTMzZGtsbDBuOWIzbm1vY3RveWRtNDYifQ.hbr58j4aPCWcEk_-a80fEQ';
+const flightmap = new mapboxgl.Map({
+container: 'flightmap',
+// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+style: 'mapbox://styles/catherineliiiii/cla3qmm8200fl14nxi500yc65',
+center: [24.945831,60.192059],
+zoom: 3
+});

@@ -1,35 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Magic Dashboard</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./styles.css" />
     <!--Bootstrap’s CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <title>Magic Dashboard</title>
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <!--Mapbox’s CSS and JS-->
     <script src="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js"></script>
     <link
       href="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css"
       rel="stylesheet"
     />
-    <style>
-      #map {
-        position: absolute;
-        top: 100px;
-        bottom: 100px;
-        width: 50%;
-      }
-    </style>
+    <!--Mapbox GL JS-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <!-- Load the mapbox-gl-geocoder plugin. -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
   </head>
+  <body class="p-3 m-0 border-0 bd-example bg-light">
 
-  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="./index.html">
         <img
@@ -88,232 +97,169 @@
         </ul>
       </div>
     </nav>
-
     <main>
-      <h1>Supplier Page</h1>
-
       <div class="container">
 
-		<h3>Beta 1</h3>
-        <div class="row">
-			<table class="table table-hover table-striped">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Order No.</th>
-                <th scope="col">Weight (tonna)</th>
-                <th scope="col">Volume (...)</th>
-                <th scope="col">Freight Info</th>
-                <th scope="col">Confirmation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                data-toggle="collapse"
-                href="#collapse1"
-                role="button"
-                aria-expanded="false"
-				aria-controls="collapse1"
-              >
-                <th
-                  scope="row"
-                  data-toggle="collapse"
-                  href="#collapse1"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="collapse1"
-                >
-                  1
-                </th>
-                <td>123456</td>
-                <td>xx</td>
-                <td>xxxxx</td>
-                <td>
-                  =======---- / some%
-                </td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    Accept
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-outline-danger"
-                    id="dropdownMenuButton"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
+        <br><h3>Choose a plan!</h3><br>
+            <div class="row">
+          <table class="table table-hover table-striped">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Order No.</th>
+                    <th scope="col">Weight (tonna)</th>
+                    <th scope="col">Volume (...)</th>
+                    <th scope="col">Freight Info</th>
+                    <th scope="col">Confirmation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    data-toggle="collapse"
+                    href="#collapse1"
+                    role="button"
                     aria-expanded="false"
+            aria-controls="collapse1"
                   >
-					Edit
-				  </button>
-                  <div
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <th
+                      scope="row"
+                      data-toggle="collapse"
+                      href="#collapse1"
+                      role="button"
+                      aria-expanded="false"
+                      aria-controls="collapse1"
+                    >
+                      1
+                    </th>
+                    <td>123456</td>
+                    <td>xx</td>
+                    <td>xxxxx</td>
+                    <td>
+                      =======---- / some%
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-outline-primary">
+                        Accept
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-outline-danger"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+              Edit
+              </button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </td>
+                  </tr>
+            <tr class="collapse" id="collapse1">
+              <td colspan="2">Flight No.: ...</td>
+              <td colspan="1">Departure: ...</td>
+              <td colspan="1">Arrival: ...</td>
+              <td colspan="1">Date: ...</td>
+              <td colspan="1">
+                <!-- map toast -->
+                <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                  <div class="toast-header">
+                    <!--for the icon before 'Flight Map'-->
+                    <svg class="bd-placeholder-img rounded me-2" 
+                    width="20" 
+                    height="20" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    aria-hidden="true" 
+                    preserveAspectRatio="xMidYMid slice" 
+                    focusable="false"><rect 
+                    width="100%" height="100%" 
+                    fill="green"></rect></svg>
+                    <!---->
+                    <strong class="me-auto">Flight Map</strong>
+                    <small>Now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                   </div>
-                </td>
-              </tr>
-			  <tr class="collapse" id="collapse1">
-				  <td colspan="2">Flight No.: ...</td>
-				  <td colspan="2">Departure: ...</td>
-					<td colspan="1">Arrival: ...</td>
-					<td colspan="1">Date: ...</td>
-			  </tr>
-
-              <tr>
-                <th scope="row">2</th>
-                <td>456123</td>
-                <td>xx</td>
-                <td>xxxxx</td>
-                <td>======----- %</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    Yes
-                  </button>
-                  <button type="button" class="btn btn-outline-danger">
-                    No
-                  </button>
-                </td>
-              </tr>
-			  <tr class="collapse" id="collapse2">
-				  <td colspan="2">Flight No.: ...</td>
-				  <td colspan="2">Departure: ...</td>
-					<td colspan="1">Arrival: ...</td>
-					<td colspan="1">Date: ...</td>
-			  </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>312789</td>
-                <td>xx</td>
-                <td>xxxxxx</td>
-                <td>======- almost full warning</td>
-
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    Yes
-                  </button>
-                  <button type="button" class="btn btn-outline-danger">
-                    No
-                  </button>
-                </td>
-              </tr>
-			  <tr class="collapse" id="collapseExample">
-				  <td colspan="2">Flight No.: ...</td>
-				  <td colspan="2">Departure: ...</td>
-					<td colspan="1">Arrival: ...</td>
-					<td colspan="1">Date: ...</td>
-			  </tr>
-            </tbody>
-          </table>
-        </div>
-
-		<br><br>
-
-        <h3>Beta 2</h3>
-        <div class="row">
-          <div id="accordion" style="margin-bottom: 20px">
-            <div class="list-group">
-              <li
-                class="list-group-item list-group-item-action"
-                data-toggle="collapse"
-                data-target="#collapse1"
-                aria-expanded="false"
-                aria-controls="collapse1"
-              >
-                <p>
-                  Formatted printout: Order no; Weight; Volume; Freight Info;
-                  Confirmation
-                </p>
-              </li>
-              <div
-                id="collapse1"
-                class="collapse"
-                aria-labelledby="heading1"
-                data-parent="#accordion"
-              >
-                <div class="card-body">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Name: {{ pigeon.birdname }}</li>
-                    <li class="list-group-item">
-                      Owner: {{ pigeon.owner.username }}
-                    </li>
-                    <li class="list-group-item">
-                      Parent1: {{ pigeon.parent1 }}
-                    </li>
-                    <li class="list-group-item">
-                      Parent2: {{ pigeon.parent2 }}
-                    </li>
-                  </ul>
+                  <div class="toast-body" id="map"></div>
                 </div>
-              </div>
-              <li
-                class="list-group-item list-group-item-action"
-                data-toggle="collapse"
-                data-target="#collapse1"
-                aria-expanded="false"
-                aria-controls="collapse1"
-              >
-                <p>
-                  Formatted printout: Order no; Weight; Volume; Freight Info;
-                  Confirmation
-                </p>
-              </li>
-              <div
-                id="collapse1"
-                class="collapse"
-                aria-labelledby="heading1"
-                data-parent="#accordion"
-              >
-                <div class="card-body">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Freight details:</li>
-                    <li class="list-group-item">Freight code:</li>
-                    <li class="list-group-item">Departure:</li>
-                    <li class="list-group-item">Arrival:</li>
-                    <li class="list-group-item">Date:</li>
-                  </ul>
-                </div>
-              </div>
+                <!-- End map toast -->
+              </td>
+            </tr>
+    
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>456123</td>
+                    <td>xx</td>
+                    <td>xxxxx</td>
+                    <td>======----- %</td>
+                    <td>
+                      <button type="button" class="btn btn-outline-primary">
+                        Yes
+                      </button>
+                      <button type="button" class="btn btn-outline-danger">
+                        No
+                      </button>
+                    </td>
+                  </tr>
+            <tr class="collapse" id="collapse2">
+              <td colspan="2">Flight No.: ...</td>
+              <td colspan="2">Departure: ...</td>
+              <td colspan="1">Arrival: ...</td>
+              <td colspan="1">Date: ...</td>
+            </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>312789</td>
+                    <td>xx</td>
+                    <td>xxxxxx</td>
+                    <td>======- almost full warning</td>
+    
+                    <td>
+                      <button type="button" class="btn btn-outline-primary">
+                        Yes
+                      </button>
+                      <button type="button" class="btn btn-outline-danger">
+                        No
+                      </button>
+                    </td>
+                  </tr>
+            <tr class="collapse" id="collapseExample">
+              <td colspan="2">Flight No.: ...</td>
+              <td colspan="2">Departure: ...</td>
+              <td colspan="1">Arrival: ...</td>
+              <td colspan="1">Date: ...</td>
+            </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
-        </div>
-      </div>
+    
+        <br><br>
     </main>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="col-12 text-center mt-4">
-          <h5>&copy; www.magicdashboard.com</h5>
-        </div>
-      </div>
-    </footer>
-
-    <!--Bootstrap’s JS-->
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <!--JS for map-->
-    <script>
-      L.mapbox.accessToken =
-        "pk.eyJ1IjoiY2F0aGVyaW5lbGlpaWlpIiwiYSI6ImNsYTMzZGtsbDBuOWIzbm1vY3RveWRtNDYifQ.hbr58j4aPCWcEk_-a80fEQ";
-      var map = L.mapbox
-        .map("map")
-        .setView([40, -74.5], 9)
-        .addLayer(L.mapbox.styleLayer("mapbox://styles/mapbox/streets-v11"));
-    </script>
-  </body>
+    
+   <!--Bootstrap’s JS-->
+   <script
+   src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+   crossorigin="anonymous"
+ ></script>
+ <script
+   src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+   crossorigin="anonymous"
+ ></script>
+ <script
+   src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+   crossorigin="anonymous"
+ ></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+ ></script>
+ <!--our JS codes-->
+ <script src="./main.js"></script>
+</body>
 </html>
