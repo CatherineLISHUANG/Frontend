@@ -10,44 +10,7 @@ defineProps({
 
 <script>
 export default {
-  methods: {
-    accept_order(order_id) {
-      this.update_order_status('APPROVED', order_id)
-    },
-    async update_order_status(new_status, order_id) {
-      const selected_order_for_update = this.query_result.find(d => d.id == order_id)
-      const payload = {
-        order_id: order_id,
-        new_status: new_status,
-      };
-      const backend_url = get_environment().backend_url
-      const is_success = await this._put_request(
-        `${backend_url}/api/v1/order`,
-        payload
-      );
-      if (is_success == true) {
-        alert(`Updated status of ${selected_order_for_update.code} with ${new_status} successfully.`);
-      } else {
-        alert(`Failed to update status of ${selected_order_for_update.code} with ${new_status}.`);
-      }
-    },
-    async _put_request(url, data) {
-      try {
-        const response = await fetch(url, {
-          method: "PUT",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
-        return true;
-      } catch (error) {
-        console.error(`Failed to PUT data to backend: ${error}`);
-        return false;
-      }
-    },
-  },
+  emits: ["accept-order"]
 };
 </script>
 
@@ -98,7 +61,7 @@ export default {
         <td>
           <button
             type="button"
-            @click="accept_order(row.id)"
+            @click="this.$emit('accept-order', row.id)"
             class="btn btn-outline-primary"
           >
             Accept
