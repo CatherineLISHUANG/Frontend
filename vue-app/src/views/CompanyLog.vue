@@ -16,6 +16,9 @@ export default {
       query_result_approved: [],
       query_result_denied: [],
       query_result_pending: [],
+      num_pending: null,
+      num_approved: null,
+      num_denied: null,
     };
   },
   methods: {
@@ -26,6 +29,9 @@ export default {
       this.query_result_approved = data.filter((d) => d.status == "APPROVED");
       this.query_result_denied = data.filter((d) => d.status == "DENIED");
       this.query_result_pending = data.filter((d) => d.status == "PENDING");
+      this.num_approved = this.query_result_approved.length;
+      this.num_denied = this.query_result_denied.length;
+      this.num_pending = this.query_result_pending.length;
     },
     async _get_request(url) {
       try {
@@ -54,21 +60,118 @@ export default {
           </p>
         </div>
       </section>
-
-      <div class="mt-5">
-        <h4>Approved</h4>
-        <CompanyLog :query_result="query_result_approved" />
+    <h1>Company Log</h1>
+    </div>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button border-success"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            <div class="title">
+              Approved <span>{{ num_approved }}</span>
+            </div>
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <div v-if="num_approved > 0" class="status-box">
+              <CompanyLog :query_result="query_result_approved" />
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="mt-5">
-        <h4>Denied</h4>
-        <CompanyLog :query_result="query_result_denied" />
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed border-warning"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            <div class="title">
+              Pending <span>{{ num_pending }}</span>
+            </div>
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <div v-if="num_pending > 0" class="status-box">
+              <CompanyLog :query_result="query_result_pending" />
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="mt-5">
-        <h4>Pending</h4>
-        <CompanyLog :query_result="query_result_pending" />
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed border-danger"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            <div class="title">
+              Denied <span>{{ num_denied }}</span>
+            </div>
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <div v-if="num_denied > 0" class="status-box">
+              <CompanyLog :query_result="query_result_denied" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
 </template>
+
+<style scoped>
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-button {
+  width: 100%;
+}
+
+h5 {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-box {
+  max-height: 500px;
+  overflow: auto;
+  border: 1px solid #d4d4d4;
+  padding: 15px;
+  margin: 10px 0;
+}
+</style>
