@@ -44,11 +44,20 @@ export default {
 
     <div class="mt-5">
       <div class="card-columns">
+<<<<<<< Updated upstream
         <div
         v-for="row in query_result" :key="row.id"
         >
           <Cards :product="row" />
         </div>
+=======
+        <Cards />
+        <Cards />
+        <Cards />
+        <Cards />
+        <Cards />
+        <Cards />
+>>>>>>> Stashed changes
       </div>
     </div>
   </div>

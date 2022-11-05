@@ -10,70 +10,108 @@ defineProps({
 <template>
   <div class="container">
     <div class="row">
-      <table class="table table-hover table-sm table-striped">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Order No.</th>
-            <th scope="col">City</th>
-            <th scope="col">Product info</th>
-            <th scope="col">Status</th>
-            <th scope="col">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="row in query_result" :key="row.id">
-            <td>{{ row.id }}</td>
-            <td>{{ row.code }}</td>
-            <td>{{ row.city.name }}</td>
-            <td>
-              <p>{{ row.product.full_info }}</p>
-              <ul>
-                <li>{{ row.product.price }} {{ row.product.sales_unit }}</li>
-                <li>{{ row.product.weight_kg }} kg</li>
-                <li>{{ row.product.total_volume_m3 }} m3</li>
-              </ul>
-            </td>
-            <td>{{ row.status }}</td>
-            <td>
-              <button
-                type="button"
-                class="btn btn-outline-warning"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Edit
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a
-                  class="dropdown-item"
-                  href="#"
-                  data-toggle="collapse"
-                  data-target="#collapsePending1"
+      <div class="table-responsive">
+        <table class="table table-hover table-sm text-center">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Order No.</th>
+              <th scope="col">City</th>
+              <th scope="col">Product info</th>
+              <th scope="col">Status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="row in query_result" :key="row.id">
+              <td>{{ row.id }}</td>
+              <td>{{ row.code }}</td>
+              <td>{{ row.city.name }}</td>
+              <td>
+                <p>{{ row.product.full_info }}</p>
+              </td>
+              <td class="text-secondary">{{ row.status }}</td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-outline-info"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
                   aria-expanded="false"
-                  aria-controls="collapsePending1"
                 >
-                  Details
-                </a>
-                <a class="dropdown-item" href="#">Cancel Order</a>
+                  Edit
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-toggle="modal"
+                    :data-target="`#${row.id}-modal`"
+                  >
+                    Details
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Cancel Order</a>
+                </div>
+              </td>
+              <!-- Modal -->
+              <div
+                class="modal fade text-left"
+                :id="`${row.id}-modal`"
+                tabindex="-1"
+                role="dialog"
+                :aria-labelledby="`${row.id}-modalTitle`"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" :id="`${row.id}-modalLongTitle`">
+                        {{ row.id }} full details:
+                      </h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>{{ row.product.full_info }}</p>
+                      <ul>
+                        <li>
+                          {{ row.product.price }} {{ row.product.sales_unit }}
+                        </li>
+                        <li>{{ row.product.weight_kg }} kg</li>
+                        <li>{{ row.product.total_volume_m3 }} m<sup>3</sup></li>
+                      </ul>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </td>
-          </tr>
-          <tr class="collapse" id="collapsePending3">
-            <td colspan="2">Product list</td>
-            <td colspan="2">Expected date:</td>
-          </tr>
-        </tbody>
-      </table>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- <br /><br />
     <h3>Past purchases</h3>
     <div class="row">
-      <table class="table table-hover table-striped">
-        <thead class="thead-light">
+      <table class="table table-hover">
+        <thead>
           <tr>
             <th scope="col">Invoice No.</th>
             <th scope="col">Content summary</th>

@@ -6,8 +6,6 @@ import Basket from "../components/Basket.vue";
   <div class="container">
     <h1>Your Basket</h1>
 
-    <div class="mt-5">
-      <Basket />
-    </div>
+    <Basket />
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div class="container">
     <h5><b>Wasabi Tigers</b></h5>
 
-    <table class="table">
+    <!--  <table class="table">
       <thead>
         <tr>
           <th scope="col">Members</th>
@@ -27,7 +27,7 @@
           <td>@twitter</td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
 
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
