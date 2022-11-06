@@ -1,6 +1,7 @@
 <script setup>
 import SupplierTable from "../components/SupplierTable.vue";
 import get_environment from "../environment.js";
+import { io } from "socket.io-client";
 </script>
 
 <script>
@@ -14,7 +15,17 @@ export default {
     return {
       error_feedback: "",
       query_result: [],
+      our_socket: null,
     };
+  },
+
+  mounted() {
+    const socker_server_port = get_environment().socker_server_port;
+    const url = `http://127.0.0.1:${socker_server_port}`;
+    const theSocket = io(url);
+
+    console.log("starting....", url);
+    this.our_socket = theSocket;
   },
   methods: {
     async explore_options() {
@@ -38,6 +49,14 @@ export default {
       }
     },
 
+    emit_trigger_to_re_query() {
+      const msg = 'from-supplier-view'
+      const myPort = get_environment().my_port;
+      const whoAmI = myPort == 5173 ? "Supplier" : "Customer";
+      console.log('emitting....emit_trigger_to_re_query')
+      this.our_socket.emit("retrigger-query", `retrigger instruction ${whoAmI} from ${myPort}: ${msg}`);
+    },
+
     accept_order(order_id) {
       this.update_order_status("APPROVED", order_id);
     },
@@ -59,6 +78,7 @@ export default {
           `Updated status of ${selected_order_for_update.code} with ${new_status} successfully.`
         );
         this.explore_options();
+        this.emit_trigger_to_re_query();
       } else {
         alert(
           `Failed to update status of ${selected_order_for_update.code} with ${new_status}.`

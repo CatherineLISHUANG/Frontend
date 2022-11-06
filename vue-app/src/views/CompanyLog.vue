@@ -1,6 +1,7 @@
 <script setup>
 import CompanyLog from "../components/CompanyLog.vue";
 import get_environment from "../environment.js";
+import { io } from "socket.io-client";
 </script>
 
 <script>
@@ -19,7 +20,21 @@ export default {
       num_pending: null,
       num_approved: null,
       num_denied: null,
+      our_socket: null,
     };
+  },
+  mounted() {
+    const socker_server_port = get_environment().socker_server_port;
+    const url = `http://127.0.0.1:${socker_server_port}`;
+    const theSocket = io(url);
+
+    console.log("starting....", url);
+    const parentThis = this
+    theSocket.on("retrigger-query", function (context_msg) {
+      console.log(`context_msg=${context_msg}`);
+      parentThis.explore_options()
+    });
+    this.our_socket = theSocket;
   },
   methods: {
     async explore_options() {
