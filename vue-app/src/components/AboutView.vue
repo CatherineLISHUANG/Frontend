@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h5><b>Wasabi Tigers</b></h5>
+    <h4><b>Wasabi Tigers</b></h4>
 
     <!--  <table class="table">
       <thead>

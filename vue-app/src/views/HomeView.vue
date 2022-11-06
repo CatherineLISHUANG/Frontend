@@ -181,7 +181,7 @@ export default {
     <div class="row">
       <div class="col-4">
         <h2>Heading</h2>
-        <p>
+        <p id="pageDescription">
           Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
           Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo
           risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo

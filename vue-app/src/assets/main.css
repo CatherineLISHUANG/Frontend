@@ -6,6 +6,10 @@
   height: 0 !important;
 }
 
+#pageDescription {
+  color: #a4ca74 !important;
+}
+
 .my-custom-scrollbar {
   position: relative;
   height: 500px;
