@@ -7,6 +7,13 @@ import ListenComponent from "../components/ListenComponent.vue";
     <div class="container">
       <section class="jumbotron text-center">
         <div class="container">
+          <img
+            src="@/assets/images/chat.gif"
+            alt="Chat Icon"
+            width="50"
+            height="40"
+            class="d-inline-block align-text-top"
+          />
           <h1 class="jumbotron-heading">Chat</h1>
           <p class="lead text-muted" id="pageDescription">
             Something short and leading about the collection below—its contents,

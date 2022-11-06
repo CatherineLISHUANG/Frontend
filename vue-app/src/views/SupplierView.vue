@@ -113,6 +113,13 @@ export default {
     <div class="container">
       <section class="jumbotron text-center">
         <div class="container">
+          <img
+            src="@/assets/images/warehouse.gif"
+            alt="Supplier Icon"
+            width="50"
+            height="40"
+            class="d-inline-block align-text-top"
+          />
           <h1 class="jumbotron-heading">Supplier Log</h1>
           <p class="lead text-muted" id="pageDescription">
             Something short and leading about the collection below—its contents,
