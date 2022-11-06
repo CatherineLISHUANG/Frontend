@@ -33,7 +33,7 @@ export default {
   methods: {
     async explore_options() {
       const backend_url = get_environment().backend_url;
-      const url = `${backend_url}/api/v1/product`;
+      const url = `${backend_url}/api/v1/organized`;
       const data = await this._get_request(url);
       this.query_result = data;
     },
@@ -74,9 +74,10 @@ export default {
     </div>
     </section>
 
-    <div class="">
+    <div v-for="group in query_result" :key="group.id" class="mb-5">
+      <h5>{{ group.product_class }}</h5>
       <div class="card-columns">
-        <div class="some-card" v-for="row in query_result" :key="row.id">
+        <div class="some-card" v-for="row in group.items" :key="row.id">
           <Cards :product="row" @add_to_basket="add_to_basket" />
         </div>
       </div>
@@ -111,7 +112,7 @@ export default {
 <style scoped>
 
 .card-columns {
-  max-height: 300px;
+  max-height: 500px;
   display: flex;
   flex-wrap:wrap;
   overflow-y: auto;
