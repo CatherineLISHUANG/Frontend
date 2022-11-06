@@ -67,6 +67,7 @@ export default {
     <div class="container">
       <section class="jumbotron text-center">
         <div class="container">
+<<<<<<< Updated upstream
           <img
             src="@/assets/images/list.gif"
             alt="Company Icon"
@@ -74,6 +75,8 @@ export default {
             height="40"
             class="d-inline-block align-text-top"
           />
+=======
+>>>>>>> Stashed changes
           <h1 class="jumbotron-heading">Company Log</h1>
           <p class="lead text-muted" id="pageDescription">
             Something short and leading about the collection below—its contents,
@@ -83,87 +86,89 @@ export default {
         </div>
       </section>
     </div>
-    <div class="accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button
-            class="accordion-button border-success"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseOne"
-            aria-expanded="false"
-            aria-controls="collapseOne"
-          >
-            <div class="title">
-              Approved <span>{{ num_approved }}</span>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="collapseOne"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingOne"
-          data-bs-parent="#accordionExample"
+
+    <div class="mt-5">
+      <div class="row text-center">
+        <h4
+          class="accordion-header col-4"
+          id="headingOne"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseOne"
+          aria-expanded="false"
+          aria-controls="collapseOne"
         >
-          <div class="accordion-body">
-            <div v-if="num_approved > 0" class="status-box">
-              <CompanyLog :query_result="query_result_approved" />
+          Approved
+          <sup>
+            <span>({{ num_approved }})</span>
+          </sup>
+        </h4>
+        <h4
+          class="accordion-header col-4"
+          id="headingTwo"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo"
+          aria-expanded="false"
+          aria-controls="collapseTwo"
+        >
+          Pending
+          <sup>
+            <span>({{ num_pending }})</span>
+          </sup>
+        </h4>
+        <h4
+          class="accordion-header col-4"
+          id="headingThree"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseThree"
+          aria-expanded="false"
+          aria-controls="collapseThree"
+        >
+          Denied
+          <sup>
+            <span>({{ num_denied }})</span>
+          </sup>
+        </h4>
+      </div>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div v-if="num_approved > 0" class="status-box">
+                <CompanyLog :query_result="query_result_approved" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button
-            class="accordion-button collapsed border-warning"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo"
-            aria-expanded="false"
-            aria-controls="collapseTwo"
+        <div class="accordion-item">
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
           >
-            <div class="title">
-              Pending <span>{{ num_pending }}</span>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="collapseTwo"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingTwo"
-          data-bs-parent="#accordionExample"
-        >
-          <div class="accordion-body">
-            <div v-if="num_pending > 0" class="status-box">
-              <CompanyLog :query_result="query_result_pending" />
+            <div class="accordion-body">
+              <div v-if="num_pending > 0" class="status-box">
+                <CompanyLog :query_result="query_result_pending" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button
-            class="accordion-button collapsed border-danger"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseThree"
-            aria-expanded="false"
-            aria-controls="collapseThree"
+        <div class="accordion-item">
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample"
           >
-            <div class="title">
-              Denied <span>{{ num_denied }}</span>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="collapseThree"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingThree"
-          data-bs-parent="#accordionExample"
-        >
-          <div class="accordion-body">
-            <div v-if="num_denied > 0" class="status-box">
-              <CompanyLog :query_result="query_result_denied" />
+            <div class="accordion-body">
+              <div v-if="num_denied > 0" class="status-box">
+                <CompanyLog :query_result="query_result_denied" />
+              </div>
             </div>
           </div>
         </div>
