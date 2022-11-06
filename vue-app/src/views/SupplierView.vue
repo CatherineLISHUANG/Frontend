@@ -136,5 +136,6 @@ export default {
         :query_result="query_result"
       />
     </div>
+  </div>
   </main>
 </template>
