@@ -19,7 +19,7 @@ export default {
   methods: {
     async explore_options() {
       const backend_url = get_environment().backend_url;
-      const url = `${backend_url}/api/v1/freight`;
+      const url = `${backend_url}/api/v1/grouped`;
       const data = await this._get_request(url);
       this.query_result_info = data.map((d) => {
         return d;
