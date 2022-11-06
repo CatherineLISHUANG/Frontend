@@ -124,18 +124,15 @@ export default {
         </div>
       </section>
 
-    <div v-if="query_result.length == 0">
-      <div class="alert alert-info">
-        No pending orders.
+      <div class="mt-5">
+        <div v-if="query_result.length == 0">
+          <div class="alert alert-info">No pending orders.</div>
+        </div>
+        <SupplierTable
+          @update_order_status="update_order_status"
+          :query_result="query_result"
+        />
       </div>
     </div>
-
-    <div class="mt-5">
-      <SupplierTable
-        @update_order_status="update_order_status"
-        :query_result="query_result"
-      />
-    </div>
-  </div>
   </main>
 </template>

@@ -218,7 +218,7 @@ export default {
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-4">
-        <h2>
+        <h2 class="text-center">
           Sustainable
           <img
             src="@/assets/images/planet-earth.png"
@@ -230,21 +230,17 @@ export default {
         </h2>
         <p class="d-flex justify-content-center">
           <list>
+            <li>Make the best of a freight volume.</li>
+            <li>Share the space, Save the world.</li>
             <li>
-              Make the best of a freight volume. Share the space, Save the
-              world.
-            </li>
-            <li>A new way of estimate freight cost.</li>
-            <li>
-              Recycling materials. Announce the unused materials here. Send to
-              someone who can utilize it.
+              Announce the unused materials. Send to ones who can utilize it.
             </li>
           </list>
         </p>
       </div>
       <!-- /.col-lg-4 -->
       <div class="col-4">
-        <h2>
+        <h2 class="text-center">
           Transparent
           <img
             src="@/assets/images/transparency.png"
@@ -265,7 +261,7 @@ export default {
       </div>
       <!-- /.col-lg-4 -->
       <div class="col-4">
-        <h2>
+        <h2 class="text-center">
           Efficient
           <img
             src="@/assets/images/clock.png"

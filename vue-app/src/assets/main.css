@@ -6,9 +6,30 @@
   height: 0 !important;
 }
 
-/* #pageDescription {
-  color: #a4ca74 !important;
-} */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.status-box {
+  border: none !important;
+}
+
+.table {
+  border: none;
+}
+.table th {
+  border-top: none !important;
+}
+
+/* Map */
+#map {
+  height: 500px;
+}
 
 .my-custom-scrollbar {
   position: relative;
@@ -17,14 +38,6 @@
 }
 .table-wrapper-scroll-y {
   display: block;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-#map {
-  height: 500px;
 }
 
 .distance-container {
@@ -50,7 +63,7 @@ body {
   margin-bottom: 0 !important;
 }
 
-//for the title of Company page
+/* for the title of pages */
 :root {
   --jumbotron-padding-y: 3rem;
 }
@@ -80,6 +93,7 @@ body {
   max-width: 40rem;
 }
 
+/* footer */
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -93,12 +107,13 @@ footer p {
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 
-
-table, th, td {
+/* table,
+th,
+td {
   border: 1px solid rgb(128, 128, 128);
   padding: 5px 10px;
 }
 
 .order-box {
   padding: 5px 10px;
-}
+} */
