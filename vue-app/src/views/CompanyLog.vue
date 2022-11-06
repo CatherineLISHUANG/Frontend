@@ -29,10 +29,10 @@ export default {
     const theSocket = io(url);
 
     console.log("starting....", url);
-    const parentThis = this
+    const parentThis = this;
     theSocket.on("retrigger-query", function (context_msg) {
       console.log(`context_msg=${context_msg}`);
-      parentThis.explore_options()
+      parentThis.explore_options();
     });
     this.our_socket = theSocket;
   },
@@ -67,7 +67,7 @@ export default {
     <div class="container">
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Purchase Log</h1>
+          <h1 class="jumbotron-heading">Company Log</h1>
           <p class="lead text-muted" id="pageDescription">
             Something short and leading about the collection below—its contents,
             the creator, etc. Make it short and sweet, but not too short so
@@ -75,7 +75,6 @@ export default {
           </p>
         </div>
       </section>
-    <h1>Company Log</h1>
     </div>
     <div class="accordion" id="accordionExample">
       <div class="accordion-item">

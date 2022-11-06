@@ -50,11 +50,14 @@ export default {
     },
 
     emit_trigger_to_re_query() {
-      const msg = 'from-supplier-view'
+      const msg = "from-supplier-view";
       const myPort = get_environment().my_port;
       const whoAmI = myPort == 5173 ? "Supplier" : "Customer";
-      console.log('emitting....emit_trigger_to_re_query')
-      this.our_socket.emit("retrigger-query", `retrigger instruction ${whoAmI} from ${myPort}: ${msg}`);
+      console.log("emitting....emit_trigger_to_re_query");
+      this.our_socket.emit(
+        "retrigger-query",
+        `retrigger instruction ${whoAmI} from ${myPort}: ${msg}`
+      );
     },
 
     accept_order(order_id) {
@@ -106,14 +109,25 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <h1>Order Log</h1>
+  <main class="container mt-5" role="main">
+    <div class="container">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Supplier Log</h1>
+          <p class="lead text-muted" id="pageDescription">
+            Something short and leading about the collection below—its contents,
+            the creator, etc. Make it short and sweet, but not too short so
+            folks don't simply skip over it entirely.
+          </p>
+        </div>
+      </section>
 
-    <div class="mt-5">
-      <SupplierTable
-        @accept-order="accept_order"
-        :query_result="query_result"
-      />
+      <div class="mt-5">
+        <SupplierTable
+          @accept-order="accept_order"
+          :query_result="query_result"
+        />
+      </div>
     </div>
-  </div>
+  </main>
 </template>
