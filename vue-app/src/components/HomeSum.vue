@@ -11,7 +11,7 @@ defineProps({
 <template>
   <div>
     <div v-for="group in query_result" :key="group.departure_city_name">
-      <h5>{{ group.departure_city_name }}</h5>
+      <h5 class="title">{{ group.departure_city_name }} <span class="">Total={{ group.total_score.toFixed(2) }}, Avg={{ group.avg_score.toFixed(2) }} (kg * m3 * km / EUR)</span></h5>
       <table class="table table-hover table-sm text-center text-sm">
         <thead>
           <tr>
@@ -63,7 +63,13 @@ defineProps({
     </div>
   </div>
 </template>
+<style scoped>
 
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+</style>
 <!-- <style scoped>
 .last-tr {
   width: 200px;
