@@ -67,7 +67,6 @@ export default {
     <div class="container">
       <section class="jumbotron text-center">
         <div class="container">
-<<<<<<< Updated upstream
           <img
             src="@/assets/images/list.gif"
             alt="Company Icon"
@@ -75,8 +74,6 @@ export default {
             height="40"
             class="d-inline-block align-text-top"
           />
-=======
->>>>>>> Stashed changes
           <h1 class="jumbotron-heading">Company Log</h1>
           <p class="lead text-muted" id="pageDescription">
             Something short and leading about the collection below—its contents,
