@@ -47,13 +47,20 @@ import Basket from "./Basket.vue";
           <RouterLink class="nav-link" to="/about">About</RouterLink>
         </li>
       </ul>
+
       <button
         class="btn btn-success mr-sm-2"
         type="button"
         data-toggle="modal"
         data-target="#basketModal"
       >
-        Basket
+        <img
+          src="@/assets/images/white.png"
+          alt="Trolly Icon"
+          width="22"
+          height="22"
+          class="d-inline-block align-text-top"
+        />
       </button>
 
       <!-- Modal -->
