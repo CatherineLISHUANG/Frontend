@@ -10,14 +10,26 @@ defineProps({
 </script>
 <template>
   <div>
+    <h4 class="text-center">Freight Info</h4>
+    <br /><br />
     <div v-for="group in query_result" :key="group.departure_city_name">
-      <h5 class="title">{{ group.departure_city_name }} <span class="">Total={{ group.total_score.toFixed(2) }}, Avg={{ group.avg_score.toFixed(2) }} (kg * m3 * km / EUR)</span></h5>
+      <h5 class="title">{{ group.departure_city_name }}</h5>
+
       <table class="table table-hover table-sm text-center text-sm">
+        <caption class="text-right">
+          <h8>
+            <span class=""
+              >Total={{ group.total_score.toFixed(2) }}, Avg={{
+                group.avg_score.toFixed(2)
+              }}
+              (kg * m3 * km / EUR)</span
+            >
+          </h8>
+        </caption>
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Date</th>
-            <th scope="col">Departure City</th>
             <th scope="col">Arrival City</th>
             <th scope="col">Weight</th>
             <th scope="col">Volume</th>
@@ -30,25 +42,10 @@ defineProps({
             <td>{{ row.date }}</td>
             <!--<td>{{ row.city.name }}</td>-->
             <td>
-              <p>{{ row.departure_city.full_info }}</p>
-              <ul>
-                <li>{{ row.departure_city.name }}</li>
-                <li>
-                  [{{ row.departure_city.latitude }},
-                  {{ row.departure_city.longitude }}]
-                </li>
-                <li>{{ row.departure_city.post_code }}</li>
-              </ul>
-            </td>
-            <td>
-              <p>{{ row.arrival_city.full_info }}</p>
+              <!--<p>{{ row.arrival_city.full_info }}</p>-->
               <ul>
                 <li>{{ row.arrival_city.name }}</li>
-                <li>
-                  [{{ row.arrival_city.latitude }},
-                  {{ row.arrival_city.longitude }}]
-                </li>
-                <li>{{ row.arrival_city.post_code }}</li>
+                <li>ZIP: {{ row.arrival_city.post_code }}</li>
               </ul>
             </td>
             <td>{{ row.pre_calc_weight }} kg</td>
@@ -64,7 +61,6 @@ defineProps({
   </div>
 </template>
 <style scoped>
-
 .title {
   display: flex;
   justify-content: space-between;

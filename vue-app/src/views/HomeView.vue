@@ -1,6 +1,6 @@
 <script setup>
 import HomeSum from "../components/HomeSum.vue";
-import ChartGroupComponent from "../components/ChartGroupComponent.vue"
+import ChartGroupComponent from "../components/ChartGroupComponent.vue";
 import get_environment from "../environment.js";
 </script>
 
@@ -27,41 +27,40 @@ export default {
         return d;
       });
 
-      const totals = data.map(d => {
-          return {
-              key: d.departure_city_name,
-              value: d.total_score
-          }
-      })
-      const avgs = data.map(d => {
-          return {
-              key: d.departure_city_name,
-              value: d.avg_score
-          }
-      })
+      const totals = data.map((d) => {
+        return {
+          key: d.departure_city_name,
+          value: d.total_score,
+        };
+      });
+      const avgs = data.map((d) => {
+        return {
+          key: d.departure_city_name,
+          value: d.avg_score,
+        };
+      });
 
-      const xTitle = 'Departure Cities'
+      const xTitle = "Departure Cities";
       this.chartData = [
-          {
-              name: "Totals",
-              backgroundColor: "#dd4949",
-              borderColor: "#dd4949",
-              type: "bar",
-              yTitle: 'Some ratio (kg * m3 * km / EUR))',
-              xTitle: xTitle,
-              data: totals
-          },
-          {
-              name: "Averages",
-              backgroundColor: "#2d7ebb",
-              borderColor: "#2d7ebb",
-              type: "bar",
-              yTitle: 'Some ratio (kg * m3 * km / EUR))',
-              xTitle: xTitle,
-              data: avgs
-          }
-      ]
-  
+        {
+          name: "Totals",
+          backgroundColor: "#dd4949",
+          borderColor: "#dd4949",
+          type: "bar",
+          yTitle: "Some ratio (kg * m3 * km / EUR))",
+          xTitle: xTitle,
+          data: totals,
+        },
+        {
+          name: "Averages",
+          backgroundColor: "#2d7ebb",
+          borderColor: "#2d7ebb",
+          type: "bar",
+          yTitle: "Some ratio (kg * m3 * km / EUR))",
+          xTitle: xTitle,
+          data: avgs,
+        },
+      ];
     },
     async _get_request(url) {
       try {
@@ -215,6 +214,7 @@ export default {
       <div id="distance" class="distance-container"></div>
     </div>
     <br /><br />
+    <hr class="featurette-divider" />
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-4">
@@ -286,10 +286,13 @@ export default {
       </div>
       <!-- /.col-lg-4 -->
     </div>
-    <!-- /.row --><br /><br />
+    <!-- /.row -->
+    <hr class="featurette-divider" />
+    <br /><br />
 
-    <ChartGroupComponent :chartData="chartData" />
-
+    <ChartGroupComponent :chartData="chartData" /><br /><br />
+    <hr class="featurette-divider" />
+    <br /><br />
     <div class="table-wrapper-scroll-y my-custom-scrollbar col-12">
       <HomeSum :query_result="query_result_info" />
     </div>
