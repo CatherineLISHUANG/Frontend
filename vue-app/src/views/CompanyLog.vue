@@ -182,6 +182,19 @@ export default {
   justify-content: space-between;
 }
 
+.accordion-header:hover {
+  background: #d4d4d4;
+  cursor: pointer;
+}
+
+.accordion-header {
+  padding: 10px 15px;
+}
+
+.accordion-header:active {
+  background: #707070;
+  cursor: pointer;
+}
 .accordion-button {
   width: 100%;
 }
