@@ -26,9 +26,9 @@ defineProps({
             <tr v-for="row in query_result" :key="row.id">
               <td>{{ row.id }}</td>
               <td>{{ row.code }}</td>
-              <td>{{ row.city.name }}</td>
+              <td><span v-if="row.city">{{ row.city.name }}</span></td>
               <td>
-                <p>{{ row.product.full_info }}</p>
+                <p v-if="row.product">{{ row.product.full_info }}</p>
               </td>
               <td v-if="row.status == 'APPROVED'" class="text-success">
                 {{ row.status }}
@@ -87,7 +87,7 @@ defineProps({
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" v-if="row.product">
                       <p>{{ row.product.full_info }}</p>
                       <ul>
                         <li>

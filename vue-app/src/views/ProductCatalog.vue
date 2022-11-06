@@ -47,6 +47,31 @@ export default {
         return [];
       }
     },
+    create_new_order() {
+      this.basket_items.forEach(d => {
+        const payload = {
+          product_id: d.id
+        }
+        this._post_request(payload)
+      })
+    },
+    async _post_request(data) {
+      try {
+        const url = 'http://127.0.0.1:5005/api/v1/order'
+        await fetch(url, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        return true;
+      } catch (error) {
+        console.error(`Failed to post data to backend: ${error}`);
+        return false;
+      }
+    },
     add_to_basket(item) {
       this.basket_items.push(item)
     }
@@ -101,6 +126,7 @@ export default {
           <div class="basket">
             <Basket :basket_items="basket_items" />
           </div>
+          <button @click="create_new_order" class="btn btn-success mt-4">Create Order</button>
         </div>
     </div>
 

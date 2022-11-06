@@ -53,11 +53,11 @@ export default {
             {{ row.id }}
           </th>
           <td>{{ row.code }}</td>
-          <td>{{ row.customer.name }}</td>
-          <td>{{ row.customer.email_address }}</td>
-          <td>{{ row.city.name }}</td>
+          <td><span v-if="row.customer">{{ row.customer.name }}</span></td>
+          <td><span v-if="row.customer">{{ row.customer.email_address }}</span></td>
+          <td><span v-if="row.city">{{ row.city.name }}</span></td>
           <td>
-            <p>{{ row.product.full_info }}</p>
+            <p v-if="row.product">{{ row.product.full_info }}</p>
           </td>
           <td>{{ row.status }}</td>
           <td>
@@ -131,7 +131,7 @@ export default {
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
+                <div v-if="row.product" class="modal-body">
                   <p>{{ row.product.full_info }}</p>
                   <ul>
                     <li>
