@@ -25,8 +25,8 @@ import { RouterLink } from "vue-router";
           >
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link text-secondary" to="/basket"
-            >Basket</RouterLink
+          <RouterLink class="nav-link text-secondary" to="/chat"
+            >Chat</RouterLink
           >
         </li>
         <li class="nav-item">
