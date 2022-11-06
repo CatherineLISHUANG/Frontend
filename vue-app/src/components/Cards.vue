@@ -12,12 +12,7 @@ defineProps({
 <script>
 
 export default {
-  methods: {
-    add_to_basket() {
-      const item = this.product
-      console.log(item)
-    }
-  }
+  emits: ["add_to_basket"]
 }
 </script>
 
@@ -34,7 +29,9 @@ export default {
           <li>{{ product.total_volume_m3 }} m3</li>
         </ul>
       </p>
-      <button @click="add_to_basket" class="btn btn-success">Add to basket</button>
+      <button
+        @click="this.$emit('add_to_basket', product)"
+        class="btn btn-success">Add to basket</button>
     </div>
   </div>
 </template>

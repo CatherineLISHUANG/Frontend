@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import Basket from "./Basket.vue";
+// import Basket from "./Basket.vue";
 </script>
 
 <template>
@@ -47,71 +47,6 @@ import Basket from "./Basket.vue";
           <RouterLink class="nav-link" to="/about">About</RouterLink>
         </li>
       </ul>
-
-      <button
-        class="btn btn-success mr-sm-2"
-        type="button"
-        data-toggle="modal"
-        data-target="#basketModal"
-      >
-        <img
-          src="@/assets/images/white.png"
-          alt="Trolly Icon"
-          width="22"
-          height="22"
-          class="d-inline-block align-text-top"
-        />
-      </button>
-
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="basketModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="basketModalTitle"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="basketModalLongTitle">
-                Your shopping basket
-              </h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <Basket />
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-              <RouterLink to="/checkout">
-                <button
-                  class="btn btn-success"
-                  type="button"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  Pay me!
-                </button>
-              </RouterLink>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </nav>
 </template>

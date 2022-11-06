@@ -1,5 +1,11 @@
 <script setup>
 import { RouterLink } from "vue-router";
+defineProps({
+  basket_items: {
+    type: Array,
+    required: true,
+  },
+});
 </script>
 <template>
   <table class="table">
@@ -7,31 +13,16 @@ import { RouterLink } from "vue-router";
       <tr>
         <th scope="col">#</th>
         <th scope="col">Product Name</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Price</th>
+        <th scope="col">Weight (kg)</th>
+        <th scope="col">Price (EUR)</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Aluminium</td>
-        <td>15</td>
-        <td>xxx</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Steel</td>
-        <td>10</td>
-        <td>xxx</td>
-      </tr>
-      <tr>
-        <th><br /></th>
-        <td><br /></td>
-        <td><br /></td>
-        <td><br /></td>
-      </tr>
-      <tr>
-        <th colspan="3"><b>Total: basketSum</b></th>
+      <tr v-for="item in basket_items" :key="item.id">
+        <th scope="row">{{ item.code }}</th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.weight_kg }}</td>
+        <td>{{ item.price }}</td>
       </tr>
     </tbody>
   </table>
