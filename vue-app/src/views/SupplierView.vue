@@ -59,10 +59,6 @@ export default {
         `retrigger instruction ${whoAmI} from ${myPort}: ${msg}`
       );
     },
-
-    accept_order(order_id) {
-      this.update_order_status("APPROVED", order_id);
-    },
     async update_order_status(new_status, order_id) {
       const selected_order_for_update = this.query_result.find(
         (d) => d.id == order_id
@@ -128,12 +124,17 @@ export default {
         </div>
       </section>
 
-      <div class="mt-5">
-        <SupplierTable
-          @accept-order="accept_order"
-          :query_result="query_result"
-        />
+    <div v-if="query_result.length == 0">
+      <div class="alert alert-info">
+        No pending orders.
       </div>
+    </div>
+
+    <div class="mt-5">
+      <SupplierTable
+        @update_order_status="update_order_status"
+        :query_result="query_result"
+      />
     </div>
   </main>
 </template>

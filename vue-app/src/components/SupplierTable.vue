@@ -10,7 +10,7 @@ defineProps({
 
 <script>
 export default {
-  emits: ["accept-order"],
+  emits: ["update_order_status"],
 };
 </script>
 
@@ -83,13 +83,14 @@ export default {
               <div class="dropdown-divider"></div>
 
               <a
-                @click="this.$emit('accept-order', row.id)"
+                @click="this.$emit('update_order_status', 'APPROVED', row.id)"
                 class="dropdown-item"
                 href="#"
               >
                 Accept
               </a>
               <a
+                @click="this.$emit('update_order_status', 'DENIED', row.id)"
                 class="dropdown-item"
                 id="dropdownMenuButton"
                 data-toggle="dropdown"
