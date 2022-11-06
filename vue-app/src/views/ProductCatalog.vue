@@ -51,9 +51,8 @@ export default {
           />
           <h1 class="jumbotron-heading">Product Catalog</h1>
           <p class="lead text-muted" id="pageDescription">
-            Something short and leading about the collection below—its contents,
-            the creator, etc. Make it short and sweet, but not too short so
-            folks don't simply skip over it entirely.
+            From this page, the customers can check the information of the
+            products and chooce what they want to buy.
           </p>
         </div>
       </section>

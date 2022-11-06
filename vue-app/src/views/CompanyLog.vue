@@ -76,9 +76,11 @@ export default {
           />
           <h1 class="jumbotron-heading">Company Log</h1>
           <p class="lead text-muted" id="pageDescription">
-            Something short and leading about the collection below—its contents,
-            the creator, etc. Make it short and sweet, but not too short so
-            folks don't simply skip over it entirely.
+            After placing the order, the status will be changed to pending. If
+            the supplier accepts the order, the status will turn into approved,
+            otherwise, it will become denied. You can check the details by
+            simply clicking on the catagory letters, such as "Approved" and
+            "Pending".
           </p>
         </div>
       </section>

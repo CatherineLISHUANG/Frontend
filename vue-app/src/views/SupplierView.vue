@@ -122,9 +122,8 @@ export default {
           />
           <h1 class="jumbotron-heading">Supplier Log</h1>
           <p class="lead text-muted" id="pageDescription">
-            Something short and leading about the collection below—its contents,
-            the creator, etc. Make it short and sweet, but not too short so
-            folks don't simply skip over it entirely.
+            The suppliers can check the details of each order and decide if they
+            want to accept the order.
           </p>
         </div>
       </section>
