@@ -32,11 +32,6 @@ import { RouterLink } from "vue-router";
       </tr>
       <tr>
         <th colspan="3"><b>Total: basketSum</b></th>
-        <td colspan="1">
-          <RouterLink to="/checkout">
-            <button class="btn btn-success text-rigth">Pay me!</button>
-          </RouterLink>
-        </td>
       </tr>
     </tbody>
   </table>

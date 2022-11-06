@@ -30,7 +30,15 @@ defineProps({
               <td>
                 <p>{{ row.product.full_info }}</p>
               </td>
-              <td class="text-secondary">{{ row.status }}</td>
+              <td v-if="row.status == 'APPROVED'" class="text-success">
+                {{ row.status }}
+              </td>
+              <td v-if="row.status == 'PENDING'" class="text-info">
+                {{ row.status }}
+              </td>
+              <td v-if="row.status == 'DENIED'" class="text-danger">
+                {{ row.status }}
+              </td>
               <td>
                 <button
                   type="button"
