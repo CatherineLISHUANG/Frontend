@@ -105,34 +105,32 @@ export default {
 </script>
 
 <template>
-  <main class="container mt-5" role="main">
-    <div class="container">
-      <section class="jumbotron text-center">
-        <div class="container">
-          <img
-            src="@/assets/images/warehouse.gif"
-            alt="Supplier Icon"
-            width="50"
-            height="40"
-            class="d-inline-block align-text-top"
-          />
-          <h1 class="jumbotron-heading">Supplier Log</h1>
-          <p class="lead text-muted" id="pageDescription">
-            The suppliers can check the details of each order and decide if they
-            want to accept the order.
-          </p>
-        </div>
-      </section>
-
-      <div class="mt-5">
-        <div v-if="query_result.length == 0">
-          <div class="alert alert-info">No pending orders.</div>
-        </div>
-        <SupplierTable
-          @update_order_status="update_order_status"
-          :query_result="query_result"
+  <div class="container">
+    <section class="jumbotron text-center">
+      <div class="container">
+        <img
+          src="@/assets/images/warehouse.gif"
+          alt="Supplier Icon"
+          width="50"
+          height="40"
+          class="d-inline-block align-text-top"
         />
+        <h1 class="jumbotron-heading">Supplier Log</h1>
+        <p class="lead text-muted" id="pageDescription">
+          The suppliers can check the details of each order and decide if they
+          want to accept the order.
+        </p>
       </div>
+    </section>
+
+    <div class="mt-5">
+      <div v-if="query_result.length == 0">
+        <div class="alert alert-info">No pending orders.</div>
+      </div>
+      <SupplierTable
+        @update_order_status="update_order_status"
+        :query_result="query_result"
+      />
     </div>
-  </main>
+  </div>
 </template>

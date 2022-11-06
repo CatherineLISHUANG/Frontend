@@ -207,7 +207,23 @@ export default {
 };
 </script>
 <template>
-  <main class="container mt-5" role="main">
+  <div class="container">
+    <section class="jumbotron text-center">
+      <div class="container">
+        <img
+          src="@/assets/images/home.gif"
+          alt="Home Icon"
+          width="50"
+          height="40"
+          class="d-inline-block align-text-top"
+        />
+        <h1 class="jumbotron-heading">Homepage</h1>
+        <p class="lead text-muted" id="pageDescription">
+          Welcome! You can check the key points of our website and some freight
+          information here.
+        </p>
+      </div>
+    </section>
     <!--Map-->
     <div class="row">
       <div class="col-12" id="map"></div>
@@ -296,5 +312,5 @@ export default {
     <div class="table-wrapper-scroll-y my-custom-scrollbar col-12">
       <HomeSum :query_result="query_result_info" />
     </div>
-  </main>
+  </div>
 </template>

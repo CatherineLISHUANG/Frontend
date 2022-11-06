@@ -38,32 +38,30 @@ export default {
 </script>
 
 <template>
-  <main class="container mt-5" role="main">
-    <div class="container">
-      <section class="jumbotron text-center">
-        <div class="container">
-          <img
-            src="@/assets/images/buy.gif"
-            alt="Buy Icon"
-            width="50"
-            height="40"
-            class="d-inline-block align-text-top"
-          />
-          <h1 class="jumbotron-heading">Product Catalog</h1>
-          <p class="lead text-muted" id="pageDescription">
-            From this page, the customers can check the information of the
-            products and chooce what they want to buy.
-          </p>
-        </div>
-      </section>
-    </div>
+  <div class="container">
+    <section class="jumbotron text-center">
+      <div class="container">
+        <img
+          src="@/assets/images/buy.gif"
+          alt="Buy Icon"
+          width="50"
+          height="40"
+          class="d-inline-block align-text-top"
+        />
+        <h1 class="jumbotron-heading">Product Catalog</h1>
+        <p class="lead text-muted" id="pageDescription">
+          From this page, the customers can check the information of the
+          products and chooce what they want to buy.
+        </p>
+      </div>
+    </section>
+  </div>
 
-    <div class="mt-5">
-      <div class="card-columns">
-        <div v-for="row in query_result" :key="row.id">
-          <Cards :product="row" />
-        </div>
+  <div class="mt-5">
+    <div class="card-columns">
+      <div v-for="row in query_result" :key="row.id">
+        <Cards :product="row" />
       </div>
     </div>
-  </main>
+  </div>
 </template>
