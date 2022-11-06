@@ -180,47 +180,74 @@ export default {
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-4">
-        <h2>Heading</h2>
-        <p>
-          Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
-          Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo
-          risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
-          cursus magna.
-        </p>
-        <p>
-          <a class="btn btn-success" href="#" role="button"
-            >View details &raquo;</a
-          >
-        </p>
-      </div>
-      <!-- /.col-lg-4 -->
-      <div class="col-4">
-        <h2>Heading</h2>
-        <p>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
-          lacinia odio sem nec elit. Cras mattis consectetur purus sit amet
-          fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-          condimentum nibh.
-        </p>
-        <p>
-          <a class="btn btn-success" href="#" role="button"
-            >View details &raquo;</a
-          >
+        <h2>
+          Sustainable
+          <img
+            src="@/assets/images/planet-earth.png"
+            alt="Icon1"
+            width="35"
+            height="35"
+            class="d-inline-block align-text-top"
+          />
+        </h2>
+        <p class="d-flex justify-content-center">
+          <list>
+            <li>
+              Make the best of a freight volume. Share the space, Save the
+              world.
+            </li>
+            <li>A new way of estimate freight cost.</li>
+            <li>
+              Recycling materials. Announce the unused materials here. Send to
+              someone who can utilize it.
+            </li>
+          </list>
         </p>
       </div>
       <!-- /.col-lg-4 -->
       <div class="col-4">
-        <h2>Heading</h2>
-        <p>
-          Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas
-          eget quam. Vestibulum id ligula porta felis euismod semper. Fusce
-          dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-          fermentum massa justo sit amet risus.
+        <h2>
+          Transparent
+          <img
+            src="@/assets/images/transparency.png"
+            alt="Icon2"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+        </h2>
+        <p class="d-flex justify-content-center">
+          <list>
+            <li>One-stop inqury. All the data you want is here.</li>
+            <li>A place to compare products in different companies.</li>
+            <li>Everyting updated in real-time.</li>
+            <br />
+          </list>
         </p>
-        <p>
-          <a class="btn btn-success" href="#" role="button"
-            >View details &raquo;</a
-          >
+      </div>
+      <!-- /.col-lg-4 -->
+      <div class="col-4">
+        <h2>
+          Efficient
+          <img
+            src="@/assets/images/clock.png"
+            alt="Icon3"
+            width="35"
+            height="35"
+            class="d-inline-block align-text-top"
+          />
+        </h2>
+        <p class="d-flex justify-content-center">
+          <list>
+            <li>
+              Make computer do the fussy, error-prone, form filling job. Free
+              your brain from the hassle.
+            </li>
+            <li>
+              Take forever to get email from your suppiler/client? Let Instant
+              Chat boost your work efficiency.
+            </li>
+          </list>
         </p>
       </div>
       <!-- /.col-lg-4 -->
